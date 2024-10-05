@@ -1,6 +1,8 @@
 package application;
 
-import java.awt.event.ActionEvent;
+
+
+import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -28,7 +30,6 @@ public class Controller {
              } else {
                  trangThai = "Béo phì";
              }
-
              
              txt_ketQua.setText(String.format("BMI: %.2f - %s", bmi, trangThai));
          }
