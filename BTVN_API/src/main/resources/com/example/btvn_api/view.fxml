@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.btvn_api.Controller">
+   <children>
+      <Text fill="#f208de" layoutX="187.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GET API PROTOCOL">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="82.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập vào URL:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txt_URL" layoutX="210.0" layoutY="91.0" prefHeight="26.0" prefWidth="330.0" />
+      <Text layoutX="82.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kết quả:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="txt_result" layoutX="82.0" layoutY="219.0" prefHeight="321.0" prefWidth="463.0" />
+      <Button fx:id="btn_search" layoutX="270.0" layoutY="137.0" mnemonicParsing="false" onAction="#searchAPI" prefHeight="26.0" prefWidth="87.0" text="Tìm kiếm" textFill="RED" />
+      <Button fx:id="btn_close" layoutX="270.0" layoutY="545.0" mnemonicParsing="false" onAction="#closeApp" prefHeight="26.0" prefWidth="87.0" text="Đóng" textFill="RED" />
+   </children>
+</AnchorPane>
