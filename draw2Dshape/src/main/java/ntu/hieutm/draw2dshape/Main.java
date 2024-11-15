@@ -50,6 +50,14 @@ public class Main extends Application {
         new double[]{100, 50, 75 },    // y
         3
     );
+    // Vẽ hình tam giác đỏ bên trong
+    gc.setStroke(Color.RED);
+    gc.setLineWidth(3);
+    gc.strokePolygon(
+        new double[]{180, 200, 220},
+        new double[]{100, 130, 100},
+        3
+    );
   }
 
   public static void main(String[] args) {
