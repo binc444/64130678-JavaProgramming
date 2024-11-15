@@ -28,12 +28,25 @@ public class Main extends Application {
   }
 
   private void drawShape(GraphicsContext gc) {
+    // Vẽ thân hình tròn
+    gc.setStroke(Color.BLACK);
+    gc.setLineWidth(3); //Độ dày đường viền
+    gc.strokeOval(150, 125, 100, 100); //(x,y,width,height)
+
     // Vẽ tam giác
     gc.setStroke(Color.BLACK);
-    gc.setLineWidth(2);
-    gc.strokePolygon(
-        new double[]{100, 200, 300}, // x của 3 đỉnh
-        new double[]{150, 50, 150},  // y của 3 đỉnh
+    gc.setFill(Color.WHITE);    // Màu nền là trắng
+
+    // Vẽ màu nền của tam giác
+    gc.fillPolygon(
+        new double[]{100, 200, 300}, // x của 3 đỉnh
+        new double[]{150, 50, 150},  // y của 3 đỉnh
+        3
+    );
+
+    gc.strokePolygon(          // Vẽ đường viền của tam giác
+        new double[]{100, 200, 300}, // x của 3 đỉnh
+        new double[]{150, 50, 150},  // y của 3 đỉnh
         3
     );
 
@@ -52,26 +65,25 @@ public class Main extends Application {
     );
     // Vẽ hình tam giác đỏ bên trong
     gc.setStroke(Color.RED);
-    gc.setLineWidth(3); //độ dày của viền
     gc.strokePolygon(
         new double[]{180, 200, 220}, //x
         new double[]{100, 130, 100}, //y
         3
     );
 
-    // Vẽ thân hình tròn
-    gc.setStroke(Color.BLACK);
-    gc.setLineWidth(2);
-    gc.strokeOval(150, 125, 100, 100); //(x,y,width,height)
-
     // Vẽ 2 hình tròn nhỏ (chân)
-    gc.strokeOval(130, 200, 40, 40);  //(x,y,width,height)
-    gc.strokeOval(230, 200, 40, 40);  //(x,y,width,height)
+    gc.setStroke(Color.BLACK);
+    gc.setFill(Color.WHITE);
+    gc.fillOval(150, 200, 40, 40);  //màu nền trắng
+    gc.strokeOval(150, 200, 40, 40);  //(x,y,width,height)
+
+    gc.fillOval(210, 200, 40, 40); //màu nền trắng
+    gc.strokeOval(210, 200, 40, 40);  //(x,y,width,height)
 
     // Vẽ móng chân
     gc.setStroke(Color.RED);
-    gc.strokeOval(135, 215, 20, 20);  //(x,y,width,height)
-    gc.strokeOval(245, 215, 20, 20);  //(x,y,width,height)
+    gc.strokeOval(155, 215, 20, 20);  //(x,y,width,height)
+    gc.strokeOval(225, 215, 20, 20);  //(x,y,width,height)
   }
 
   public static void main(String[] args) {
