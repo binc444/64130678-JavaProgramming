@@ -4,26 +4,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import BLL.NhanVienBLL;
+import Model_DTO.NhanVien;
+
 public class Home {
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		Class.forName("com.mysql.jdbc.Driver");
-		String strConn = "jdbc:mysql://localhost:3306/demobanhang";
-		//Mở kết nối
-		Connection conn = DriverManager.getConnection(strConn, "root", "");
-		
-		// Select
-		String sqlSelect = "select * from SanPham";
-		Statement lenh = conn.createStatement();
-		ResultSet ketQua = lenh.executeQuery(sqlSelect);
-		//Hiện kết quả
-		while (ketQua.next()) {
-			int id = ketQua.getInt(1); //lấy dữ liệu cột 0
-			String tenSP = ketQua.getString(2);
-			float giaSP = ketQua.getFloat(3);
-			String mota = ketQua.getString(4);
-			System.out.print(id + "|" + tenSP + "|" + giaSP + "|" + mota + "\n");
-		}
-	}
+	public static void main(String[] args) {
+        NhanVienBLL nhanVienBLL = new NhanVienBLL();
+
+        // Thêm nhân viên mới
+        NhanVien nv = new NhanVien("admin", "123456");
+        boolean isAdded = nhanVienBLL.ThemMoi(nv);
+        System.out.println("Thêm nhân viên thành công: " + isAdded);
+
+        // Kiểm tra đăng nhập
+        boolean isLoginSuccess = nhanVienBLL.checkLogin("admin", "123456");
+        System.out.println("Đăng nhập thành công: " + isLoginSuccess);
+    }
 
 }
