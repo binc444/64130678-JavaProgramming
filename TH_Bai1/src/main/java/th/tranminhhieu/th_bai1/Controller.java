@@ -28,24 +28,19 @@ public class Controller {
             double a = Double.parseDouble(txtA.getText());
             double b = Double.parseDouble(txtB.getText());
             double result = 0;
-            String operation = "";
 
             if (rdoCong.isSelected()) {
                 result = a + b;
-                operation = "Cộng";
             } else if (rdoTru.isSelected()) {
                 result = a - b;
-                operation = "Trừ";
             } else if (rdoNhan.isSelected()) {
                 result = a * b;
-                operation = "Nhân";
             } else if (rdoChia.isSelected()) {
                 if (b == 0) {
                     txtKetQua.setText("Không thể chia cho 0!");
                     return;
                 }
                 result = a / b;
-                operation = "Chia";
             } else {
                 txtKetQua.setText("Vui lòng chọn phép toán!");
                 return;
