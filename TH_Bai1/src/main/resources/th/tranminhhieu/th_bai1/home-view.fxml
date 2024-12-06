@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="351.0" style="-fx-background-color: #d9f8c4;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.tranminhhieu.th_bai1.Controller">
+  <children>
+    <Label layoutX="105.0" layoutY="42.0" text="TOÁN HỌC ĐƠN GIẢN" textFill="#6304f2">
+      <font>
+        <Font size="14.0" />
+      </font>
+      <effect>
+        <Bloom />
+      </effect>
+    </Label>
+    <VBox layoutX="44.0" layoutY="71.0" prefHeight="451.0" prefWidth="262.0">
+      <children>
+        <HBox prefHeight="47.0" prefWidth="234.0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A =">
+              <font>
+                <Font size="14.0" />
+              </font>
+            </Text>
+            <TextField fx:id="txtA" prefHeight="26.0" prefWidth="228.0" />
+          </children>
+        </HBox>
+        <HBox prefHeight="37.0" prefWidth="237.0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="B =">
+              <font>
+                <Font size="14.0" />
+              </font>
+            </Text>
+            <TextField fx:id="txtB" prefHeight="26.0" prefWidth="228.0" />
+          </children>
+        </HBox>
+        <VBox prefHeight="366.0" prefWidth="256.0">
+          <children>
+            <Label text="Chọn phép toán" />
+            <RadioButton fx:id="rdoCong" mnemonicParsing="false" prefHeight="30.0" prefWidth="66.0" text="Cộng" />
+            <RadioButton fx:id="rdoTru" mnemonicParsing="false" prefHeight="37.0" prefWidth="54.0" text="Trừ" />
+            <RadioButton fx:id="rdoNhan" mnemonicParsing="false" prefHeight="35.0" prefWidth="62.0" text="Nhân" />
+            <RadioButton fx:id="rdoChia" mnemonicParsing="false" prefHeight="34.0" prefWidth="51.0" text="Chia" />
+            <Button fx:id="btnTinh" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#xuLyPhepToan" prefHeight="43.0" prefWidth="131.0" style="-fx-background-color: #04b4ae;" text="Thực hiện" />
+            <TextArea fx:id="txtKetQua" prefHeight="182.0" prefWidth="262.0" text="Kết quả:" />
+          </children>
+        </VBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>
