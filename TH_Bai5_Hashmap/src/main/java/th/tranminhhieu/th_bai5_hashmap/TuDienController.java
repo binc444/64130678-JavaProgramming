@@ -1,14 +1,18 @@
 package th.tranminhhieu.th_bai5_hashmap;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 public class TuDienController {
+
   @FXML
   private TextField txt_inputWord;
 
@@ -23,6 +27,7 @@ public class TuDienController {
 
   @FXML
   private Button btn_addNewWord;
+
 
   private HashMap<String, Word> td = new HashMap<>();
 
@@ -40,6 +45,10 @@ public class TuDienController {
     td.put("tree", new Word("/triː/", "cây"));
   }
 
+  public void setHashMap(HashMap<String, Word> td) {
+    this.td = td;
+  }
+
   @FXML
   public void xuLyTimKiem() {
     String inputWord = txt_inputWord.getText().trim().toLowerCase();
@@ -50,17 +59,30 @@ public class TuDienController {
       txt_meaning.setText(word.getMeaning());
     } else {
       txt_transcription.setText("");
-      txt_meaning.setText("Không tìm thấy từ này, bạn có thể thêm từ này từ điển bằng nút bên dưới!");
+      txt_meaning.setText("Không tìm thấy từ này, bạn có thể thêm từ này bằng nút bên dưới!");
     }
   }
 
   @FXML
   public void xuLyThemTuMoi() {
+    try {
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("addNew-view.fxml"));
+      Scene addNewWordScene = new Scene(loader.load());
 
+      AddNewWordController addNewWordController = loader.getController();
+
+      addNewWordController.setHashMap(td);
+
+      Stage stage = (Stage) btn_addNewWord.getScene().getWindow();
+      stage.setScene(addNewWordScene);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
+
   // Lớp Word để lưu thông tin của mỗi từ
-  private static class Word {
+  public static class Word {
     private String transcription;
     private String meaning;
 

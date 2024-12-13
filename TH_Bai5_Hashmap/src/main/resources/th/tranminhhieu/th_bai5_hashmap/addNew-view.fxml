@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -10,37 +11,77 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="240.0" prefWidth="338.0" style="-fx-background-color: #f1f168;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.tranminhhieu.th_bai5_hashmap.AddNewWordController">
+<AnchorPane prefHeight="346.0" prefWidth="412.0" style="-fx-background-color: #f1f168;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.tranminhhieu.th_bai5_hashmap.AddNewWordController">
    <children>
-      <VBox layoutX="54.0" layoutY="14.0" prefHeight="183.0" prefWidth="218.0">
+      <VBox layoutX="79.0" layoutY="55.0" prefHeight="219.0" prefWidth="254.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập một từ mới cần thêm:" wrappingWidth="230.01299285888672">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </Text>
-            <TextField fx:id="txt_putWord" alignment="TOP_LEFT" editable="false" prefHeight="88.0" prefWidth="228.0">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-               <padding>
-                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-               </padding>
-            </TextField>
+            <VBox prefHeight="82.0" prefWidth="269.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập một từ tiếng Anh:" wrappingWidth="230.01299285888672">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txt_addEngWord" alignment="TOP_LEFT" prefHeight="42.0" prefWidth="235.0">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <VBox prefHeight="82.0" prefWidth="230.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập phiên âm:" wrappingWidth="230.01299285888672">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField fx:id="txt_phonetic" accessibleRoleDescription="ed" alignment="TOP_LEFT" prefHeight="42.0" prefWidth="235.0">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="82.0" prefWidth="230.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập nghĩa tiếng Việt:" wrappingWidth="230.01299285888672">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="txt_nghiaTiengViet" alignment="TOP_LEFT" prefHeight="42.0" prefWidth="235.0">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
             <HBox alignment="CENTER" prefHeight="42.0" prefWidth="188.0">
                <children>
-                  <Button fx:id="btn_addThisWord" alignment="CENTER" mnemonicParsing="false" onAction="#xuLyThemVaoTuDien" prefHeight="45.0" prefWidth="96.0" style="-fx-background-radius: 40; -fx-background-color: #d668f1;" text="Thêm" />
+                  <Button fx:id="btn_addThisWord" alignment="CENTER" mnemonicParsing="false" onAction="#xuLyThemVaoTuDien" prefHeight="36.0" prefWidth="98.0" style="-fx-background-radius: 40; -fx-background-color: #d668f1;" text="Thêm" />
                </children>
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="btn_return" alignment="CENTER" layoutX="268.0" layoutY="191.0" mnemonicParsing="false" onAction="#xuLyTroVe" prefHeight="42.0" prefWidth="56.0" style="-fx-background-radius: 40; -fx-background-color: #d668f1;" text="⏎" textFill="WHITE">
+      <Button fx:id="btn_return" alignment="CENTER" layoutX="342.0" layoutY="283.0" mnemonicParsing="false" onAction="#xuLyTroVe" prefHeight="42.0" prefWidth="56.0" style="-fx-background-radius: 40; -fx-background-color: #d668f1;" text="⏎" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <Label layoutX="165.0" layoutY="14.0" style="-fx-background-color: #33ffe9; -fx-background-radius: 10;" text="THÊM TỪ" textFill="#f70202">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
